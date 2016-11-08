@@ -847,10 +847,7 @@ def ExportXModel(filePath):
 	
 	# Write header
 	f.write("// Export filename: '%s'\n" % os.path.normpath(filePath))
-	if cmds.file(query=True, exists=True):
-		f.write("// Source filename: '%s'\n" % os.path.normpath(os.path.abspath(cmds.file(query=True, sceneName=True))))
-	else:
-		f.write("// Source filename: Unsaved\n")
+	f.write("// Source filename: Unsaved\n")
 	f.write("// Export time: %s\n\n" % datetime.datetime.now().strftime("%a %b %d %Y, %H:%M:%S"))
 	f.write("MODEL\n")
 	f.write("VERSION 6\n\n")
